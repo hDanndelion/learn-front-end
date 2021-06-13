@@ -1,0 +1,44 @@
+/* PC */
+@media (min-width: 1024px) {
+
+}
+
+/* Ipad */
+@media (min-width: 740px) and (max-width: 1024px) {
+
+}
+
+/* Mobile */
+@media (max-width: 740px) {
+    .navbar-header {
+        position: absolute;
+    }
+    #myNavbar {
+        float: left;
+    }
+    .nav li {
+        display: block;
+    }
+    .navbar {
+        overflow: hidden;
+    }
+    .nav {
+        margin-top: 50px;
+    }
+    .icon_menu {
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        display: block;
+    }
+    .icon_menu a {
+        text-decoration: none;
+    }
+    .icon_menu a span {
+        border-radius: 7px;
+        background-color: #ccc;
+        padding: 8px 8px 10px 11px;
+        font-size: 25px;
+        color: #ccc;
+    }
+}

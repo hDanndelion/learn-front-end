@@ -48,7 +48,7 @@
 			<div class="item active">
 				<img src="assets/img/ny.jpg" alt="New York" width="100%" height="auto">
 				<div class="carousel-caption">
-					<h3>New York1</h3>
+					<h3>New York</h3>
 					<p>The atmosphere in New York is lorem ipsum.</p>
 				</div>
 			</div>
@@ -160,13 +160,13 @@
 			<p class="text-center"><em>We love our fans!</em></p>
 
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-4 col_full">
 					<p>Fan? Drop a note.</p>
 					<p><span class="ti-location-pin"></span>Chicago, US</p>
 					<p><span class="ti-mobile"></span>Phone: +00 1515151515</p>
 					<p><span class="ti-email"></span>Email: mail@mail.com</p>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-8 col_full">
 					<div class="row">
 						<div class="col-sm-6 form-group">
 							<input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
@@ -224,8 +224,13 @@
 		for (let i = 0; i < menuItems.length; i++) {
 			var menuItem = menuItems[i];
 
-			menuItem.onclick = function () {
-				getH.style.height = null;
+			menuItem.onclick = function (event) {
+				var isMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('dropdown-menu');
+				if (isMenu) {
+					event.preventDefault();
+				} else {
+					getH.style.height = null;
+				}
 			}
 		}
 	</script>

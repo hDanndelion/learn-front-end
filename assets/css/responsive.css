@@ -12,6 +12,7 @@
 
     #myNavbar {
         float: left;
+        width: 100%;
     }
 
     .nav li {
@@ -29,7 +30,7 @@
     .icon_menu {
         position: absolute;
         top: 3px;
-        right: 15px;
+        right: 2px;
         display: block;
     }
 
@@ -46,5 +47,52 @@
 
     .icon_menu:hover a span {
         background-color: #353535;
+    }
+
+    .nav>li {
+        padding: 0;
+    }
+
+    .nav>li>a {
+        display: block;
+        padding: 15px;
+    }
+
+    .dropdown-menu {
+        position: initial;
+    }
+
+    .dropdown-menu>li a {
+        padding: 20px;
+        display: block;
+    }
+
+    .dropdown-menu > li {
+        padding: 0;
+    }
+
+    .col-sm-4 {
+        width: auto;
+        float: initial;
+    }
+
+    .container {
+        padding: 80px 20px;
+    }
+
+    .thumbnail {
+        margin-bottom: 20px;
+    }
+
+    .col_full {
+        width: auto !important;
+    }
+
+    .col_full > .row div {
+        width: 100%;
+    }
+
+    .col_full > .row div button {
+        width: 100%;
     }
 }

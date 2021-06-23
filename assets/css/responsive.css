@@ -1,15 +1,15 @@
 /* PC */
-@media (min-width: 1024px) {}
+@media (min-width: 64em) {}
 
 /* Ipad */
-@media (min-width: 740px) and (max-width: 1024px) {
+@media (min-width: 46.25em) and (max-width: 64em) {
     .container {
         padding: 80px 60px;
     }
 }
 
 /* Mobile */
-@media (max-width: 740px) {
+@media (max-width: 46.25em) {
     .navbar-header {
         position: absolute;
     }

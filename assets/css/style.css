@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	font: 400 15px/1.8 Lato, sans-serif;
+	font: 400 20px/1.8 Lato, sans-serif;
 	color: #777;
 	margin: 0;
 }
@@ -24,7 +24,7 @@ h4 {
 }
 
 .container {
-	padding: 80px 120px;
+	padding: 80px 240px;
 }
 
 .person {
@@ -49,8 +49,9 @@ h4 {
 	/* make all photos black and white */
 }
 
-.carousel-caption h3 {
+.carousel-caption h3, .carousel-caption p {
 	color: #fff !important;
+	text-shadow: 0 0 1px #000;
 }
 
 @media (max-width: 600px) {

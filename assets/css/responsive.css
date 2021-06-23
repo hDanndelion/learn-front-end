@@ -2,7 +2,11 @@
 @media (min-width: 1024px) {}
 
 /* Ipad */
-@media (min-width: 740px) and (max-width: 1024px) {}
+@media (min-width: 740px) and (max-width: 1024px) {
+    .container {
+        padding: 80px 60px;
+    }
+}
 
 /* Mobile */
 @media (max-width: 740px) {

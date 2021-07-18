@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./assets/css/style.css">
 	<link rel="stylesheet" href="./assets/font-icona/themify-icons.css">
 	<link rel="stylesheet" href="./assets/css/responsive.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -131,7 +132,7 @@
 						<img src="./assets/img/paris.jpg" alt="Paris" width="400" height="300">
 						<p><strong>Paris</strong></p>
 						<p>Friday 27 November 2015</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+						<button class="btn js-buy-ticket" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
 					</div>
 				</div>
 				<div class="col-sm-4">
@@ -139,7 +140,7 @@
 						<img src="./assets/img/newyork.jpg" alt="New York" width="400" height="300">
 						<p><strong>New York</strong></p>
 						<p>Saturday 28 November 2015</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+						<button class="btn js-buy-ticket" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
 					</div>
 				</div>
 				<div class="col-sm-4">
@@ -147,7 +148,7 @@
 						<img src="./assets/img/sanfran.jpg" alt="San Francisco" width="400" height="300">
 						<p><strong>San Francisco</strong></p>
 						<p>Sunday 29 November 2015</p>
-						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+						<button class="btn js-buy-ticket" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -194,6 +195,45 @@
 		<!-- Image of location/map -->
 		<img src="./assets/img/map.jpg" class="img-responsive" style="width:100%">
 
+		<!-- Modal -->
+		<div class="modal js-modal">
+			<div class="modal__container js-modal__container">
+				<div class="modal__header">
+					<div class="modal__header-close js-modal__header-close">
+						<i class="fas fa-times"></i>
+					</div>
+					
+					<div class="modal__header-content">
+						<i class="fas fa-suitcase"></i>
+						Tickets
+					</div>
+				</div>
+
+				<div class="modal__body">
+					<label for="ticket-quantity" class="modal__label">
+						<i class="fas fa-shopping-cart"></i>
+						Tickets, 15$ per person
+					</label>
+					<input id="ticket-quantity" type="text" class="modal__input" placeholder="How many ?">
+
+					<label for="ticket-email" class="modal__label">
+						<i class="fas fa-user"></i>
+						Send to
+					</label>
+					<input id="ticket-email" type="text" class="modal__input" placeholder="Enter email ...">
+
+					<button class="buy-tickets">
+						Pay
+						<i class="fas fa-check"></i>
+					</button>
+
+					<div class="modal__footer">
+						<a href="" class="modal__footer-link">Need help ?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Footer -->
 		<footer class="text-center">
 			<a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
@@ -235,6 +275,32 @@
 		}
 	</script>
 	
+	<!-- Event click buy ticket -->
+	<script>
+		const buyBtns = document.querySelectorAll('.js-buy-ticket');
+		const modal = document.querySelector('.js-modal');
+		const modalClose = document.querySelector('.js-modal__header-close');
+		const modalContainer = document.querySelector('.js-modal__container');
+
+		function showbBuyTickets() {
+			modal.classList.add('open');
+		}
+
+		function hideBuyTickets() {
+			modal.classList.remove('open');
+
+		}
+
+		for (const buyBtn of buyBtns) {
+			buyBtn.addEventListener('click', showbBuyTickets);
+		}
+
+		modalClose.addEventListener('click', hideBuyTickets);
+		modal.addEventListener('click', hideBuyTickets);
+		modalContainer.addEventListener('click', function (event) {
+			event.stopPropagation(modalContainer);
+		})
+	</script>
 </body>
 
 </html>
